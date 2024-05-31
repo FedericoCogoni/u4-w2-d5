@@ -41,11 +41,15 @@ public class Application {
         }
 
         System.out.println("----------------------------------------RICERCA PER ANNO--------------------------");
-        int annoRicerca = 1990;
+        int annoRicerca = 1200;
         List<Elemento> elementiXAnno = archivio.ricercaPerAnno(annoRicerca);
-        System.out.println("gli elementi trovati per l'anno : " + annoRicerca + "sono: ");
-        for(Elemento elemento : elementiXAnno){
-            System.out.println(elemento);
+        if(elementiXAnno.isEmpty()){
+            System.out.println("Nessun elemento trovato pubblicato nel: " + annoRicerca);
+        }else {
+            System.out.println("gli elementi trovati per l'anno : " + annoRicerca + " sono: ");
+            for (Elemento elemento : elementiXAnno) {
+                System.out.println(elemento);
+            }
         }
 
 
