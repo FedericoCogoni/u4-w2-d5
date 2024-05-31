@@ -24,8 +24,8 @@ public class Libro extends Elemento{
     public String toString() {
         return "Libro{" +
                 " " + super.toString() +
-                "autore= '" + autore + '\'' +
-                ", genere= '" + genere + "'" +
+                "autore='" + autore + '\'' +
+                ", genere='" + genere + "'" +
                 " }";
 
     }

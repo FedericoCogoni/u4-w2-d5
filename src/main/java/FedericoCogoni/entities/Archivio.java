@@ -76,11 +76,15 @@ public class Archivio {
         System.out.println("elemento rimosso con successo!");
     }
 
-
+//Ho voluto googlare questo toString in modo da avere un risultato piu leggibile in console
     @Override
     public String toString() {
-        return "Archivio{" +
-                "listaCatalogo=" + listaCatalogo +
-                '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("Archivio [\n");
+        for (Elemento elemento : listaCatalogo) {
+            sb.append("\t").append(elemento).append("\n");
+        }
+        sb.append("]");
+        return sb.toString();
     }
 }

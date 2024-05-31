@@ -38,11 +38,11 @@ public abstract class Elemento {
 
     @Override
     public String toString() {
-        return "Elemento{" +
+        return "Elemento" +
                 "isbn='" + isbn + '\'' +
                 ", titolo='" + titolo + '\'' +
                 ", annoPubblicazione=" + annoPubblicazione +
-                ", pagine=" + pagine +
-                '}';
+                ", pagine=" + pagine + " " ;
+
     }
 }
