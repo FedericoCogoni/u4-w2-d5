@@ -64,7 +64,7 @@ public class Archivio {
 
     public void rimuoviXIsbn(String isbn){
         if(listaCatalogo.isEmpty()){
-            System.out.println("la lista è già vuota");
+            System.out.println("la lista è vuota");
         }
         if (isbn == null) {
             System.out.println("inserisci un isbm");
