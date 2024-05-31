@@ -20,14 +20,15 @@ public class Application {
         Libro libro2 = new Libro("prova2", 1890, 50, "ciao2", "horror");
         Riviste rivista1 = new Riviste("prova3",    1990, 35, Periodicità.SEMESTRALE);
         Riviste rivista2 = new Riviste("prova4", 2020, 40, Periodicità.SETTIMANALE);
-        Libro libro3 = new Libro("prova3", 1590, 90, "ciao", "fantasy");
+        Libro libro3 = new Libro("prova5", 1590, 90, "ciao", "fantasy");
+        Riviste rivista3 = new Riviste("prova6", 2022, 20, Periodicità.MENSILE);
 
         archivio.aggiungiElemento(libro1);
         archivio.aggiungiElemento(libro2);
         archivio.aggiungiElemento(rivista1);
         archivio.aggiungiElemento(rivista2);
-
         archivio.aggiungiElemento(libro3);
+        archivio.aggiungiElemento(rivista3);
 
         System.out.println(archivio);
 
@@ -64,6 +65,12 @@ public class Application {
             }
 
         }
+
+
+        System.out.println("----------------------------------------RIMOZIONE ELEMENTO--------------------------");
+        String isbnDaRimuovere = libro1.getIsbn();
+        archivio.rimuoviXIsbn(isbnDaRimuovere);
+        System.out.println(archivio);
 
     }
 
