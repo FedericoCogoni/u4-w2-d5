@@ -9,6 +9,10 @@ public class Archivio {
         this.listaCatalogo = listaCatalogo;
     }
 
+    public void aggiungiElemento(Elemento elemento) {
+        listaCatalogo.add(elemento);
+    }
+
     @Override
     public String toString() {
         return "Archivio{" +
