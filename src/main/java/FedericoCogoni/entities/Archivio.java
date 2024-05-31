@@ -1,14 +1,16 @@
 package FedericoCogoni.entities;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class Archivio {
-    List<Elemento> listaCatalogo;
+    private  List<Elemento> listaCatalogo;
 
     public Archivio(List<Elemento> listaCatalogo) {
         this.listaCatalogo = listaCatalogo;
+    }
+
+    public List<Elemento> getListaCatalogo() {
+        return listaCatalogo;
     }
 
     public void aggiungiElemento(Elemento elemento) {
@@ -76,15 +78,11 @@ public class Archivio {
         System.out.println("elemento rimosso con successo!");
     }
 
-//Ho voluto googlare questo toString in modo da avere un risultato piu leggibile in console
+
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Archivio [\n");
-        for (Elemento elemento : listaCatalogo) {
-            sb.append("\t").append(elemento).append("\n");
-        }
-        sb.append("]");
-        return sb.toString();
+        return "Archivio{" +
+                "listaCatalogo=" + listaCatalogo +
+                '}';
     }
 }

@@ -14,10 +14,6 @@ public class Riviste extends Elemento{
     }
 
 
-    public Periodicità getPeriodicità() {
-        return periodicità;
-    }
-
     @Override
     public String toString() {
         return "Riviste{" +

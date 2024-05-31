@@ -30,12 +30,13 @@ public class Application {
         archivio.aggiungiElemento(rivista2);
         archivio.aggiungiElemento(libro3);
         archivio.aggiungiElemento(rivista3);
-
+        archivio.getListaCatalogo().stream().forEach(elemento -> System.out.println(elemento));
         System.out.println(archivio);
 
         System.out.println("----------------------------------------RIMOZIONE ELEMENTO--------------------------");
         String isbnDaRimuovere = libro1.getIsbn();
         archivio.rimuoviXIsbn(isbnDaRimuovere);
+        archivio.getListaCatalogo().stream().forEach(elemento -> System.out.println(elemento));
         System.out.println(archivio);
 
         System.out.println("----------------------------------------RICERCA PER ISBN--------------------------");
@@ -46,6 +47,20 @@ public class Application {
         } else {
             System.out.println("Nessun elemento trovato con ISBN corrispondente a: " + isbnDaCercare);
         }
+
+        System.out.println("----------------------------------------RICERCA PER AUTORE--------------------------");
+        System.out.println("Inserisci l'autore da cercare:");
+        String autoreRicerca = scanner.nextLine();
+        List<Elemento> elementiXAutore = archivio.ricercaPerAutore(autoreRicerca);
+        if (elementiXAutore.isEmpty()) {
+            System.out.println("Nessun elemento trovato per l'autore: " + autoreRicerca);
+        } else {
+            System.out.println("Gli elementi trovati per l'autore '" + autoreRicerca + "' sono:");
+            for (Elemento elemento : elementiXAutore) {
+                System.out.println(elemento);
+            }
+        }
+
 
         System.out.println("----------------------------------------RICERCA PER ANNO--------------------------");
         System.out.println("Inserisci l'anno da cercare:");
@@ -60,18 +75,6 @@ public class Application {
             }
         }
 
-        System.out.println("----------------------------------------RICERCA PER AUTORE--------------------------");
-        System.out.println("Inserisci l'autore da cercare:");
-        String autoreRicerca = scanner.nextLine(); // Leggi l'autore dall'input utente
-        List<Elemento> elementiXAutore = archivio.ricercaPerAutore(autoreRicerca);
-        if (elementiXAutore.isEmpty()) {
-            System.out.println("Nessun elemento trovato per l'autore: " + autoreRicerca);
-        } else {
-            System.out.println("Gli elementi trovati per l'autore '" + autoreRicerca + "' sono:");
-            for (Elemento elemento : elementiXAutore) {
-                System.out.println(elemento);
-            }
-        }
 
         scanner.close();
     }

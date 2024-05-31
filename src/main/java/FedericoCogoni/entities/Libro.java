@@ -1,7 +1,5 @@
 package FedericoCogoni.entities;
 
-import java.time.LocalDate;
-
 public class Libro extends Elemento{
     private String autore;
     private String genere;
@@ -16,9 +14,6 @@ public class Libro extends Elemento{
         return autore;
     }
 
-    public String getGenere() {
-        return genere;
-    }
 
     @Override
     public String toString() {
