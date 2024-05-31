@@ -33,6 +33,16 @@ public class Archivio {
         return risultato;
     }
 
+    public List<Elemento> ricercaPerAutore(String autore) {
+        List<Elemento> risultato = new ArrayList<>();
+        for (Elemento elemento : listaCatalogo) {
+            if (elemento instanceof Libro libro && libro.getAutore().equals(autore)) {
+                risultato.add(elemento);
+            }
+        }
+        return risultato;
+    }
+
 
     @Override
     public String toString() {
