@@ -2,10 +2,7 @@ package FedericoCogoni.entities;
 
 import com.github.javafaker.Faker;
 
-import java.time.LocalDate;
-
 public abstract class Elemento {
-
     private String isbn;
     private String titolo;
     private int annoPubblicazione;
@@ -41,11 +38,11 @@ public abstract class Elemento {
 
     @Override
     public String toString() {
-        return
+        return "Elemento{" +
                 "isbn='" + isbn + '\'' +
-                ", titolo= '" + titolo + '\'' +
-                ", annoPubblicazione= " + annoPubblicazione +
-                ", pagine= " + pagine + " " ;
-
+                ", titolo='" + titolo + '\'' +
+                ", annoPubblicazione=" + annoPubblicazione +
+                ", pagine=" + pagine +
+                '}';
     }
 }

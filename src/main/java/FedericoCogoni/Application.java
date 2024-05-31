@@ -13,6 +13,9 @@ public class Application {
         List<Elemento> catalogo = new ArrayList<>();
         Archivio archivio = new Archivio(catalogo);
 
+
+
+        System.out.println("----------------------------------------AGGIUNGI ELEMENTO---------------------------");
         Libro libro1 = new Libro("prova1", 1990, 90, "ciao", "fantasy");
         Libro libro2 = new Libro("prova2", 1890, 50, "ciao2", "horror");
         Riviste rivista1 = new Riviste("prova3", 2000, 35, Periodicità.SEMESTRALE);
@@ -27,6 +30,23 @@ public class Application {
         archivio.aggiungiElemento(libro3);
 
         System.out.println(archivio);
+
+        System.out.println("----------------------------------------RICERCA PER ISBN--------------------------");
+        String isbnDaCercare = rivista2.getIsbn();
+        Elemento elementoTrovato = archivio.ricercaPerIsbn(isbnDaCercare);
+        if (elementoTrovato != null) {
+            System.out.println("Elemento con ISBN " + isbnDaCercare + " trovato : " + elementoTrovato);
+        } else {
+            System.out.println("Nessun elemento trovato con ISBN corrispondente a: " + isbnDaCercare);
+        }
+
+        System.out.println("----------------------------------------RICERCA PER ANNO--------------------------");
+        int annoRicerca = 1990;
+        List<Elemento> elementiXAnno = archivio.ricercaPerAnno(annoRicerca);
+        System.out.println("gli elementi trovati per l'anno : " + annoRicerca + "sono: ");
+        for(Elemento elemento : elementiXAnno){
+            System.out.println(elemento);
+        }
 
 
     }
